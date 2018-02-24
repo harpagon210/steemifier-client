@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Steemify the content</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body class="steemifier">
+    <section class="section">
+        <div class="container">
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input id="title" class="input" type="text" placeholder="Title">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Tags</label>
+                <div class="control">
+                    <input id="tags-input">
+                </div>
+                <br>
+            </div>
+
+            <div class="field">
+                <label class="label">Content</label>
+                <div class="control">
+                    <textarea id="content" class="textarea" placeholder="Your awesome content..."></textarea>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="field">
+                    <label class="label">Preview</label>
+                    <div class="">
+                        <div id="preview"></div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="field">
+                <label class="label">Reward options</label>
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select id="reward-option">
+                            <option value="50">50% SBD and 50% SP</option>
+                            <option value="100">100% Steem Power</option>
+                            <option value="0">Decline</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="field is-grouped is-grouped-right">
+                <div class="control">
+                    <button id="post" class="button is-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="result-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <article class="message is-primary">
+                <div class="message-header">
+                  <p>Your content has been successfully added to Steemifier</p>
+                </div>
+                <div class="message-body">
+                    <p>You can now see your content via the Steemifier extension at <a id="link-steemified-content" href="#"></a></p>
+                    <br>
+                    <p>You can also visualize or edit the content created on Steem via <a id="link-steem-content" href="#">this link</a></p>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div id="error-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <article class="message is-danger">
+                <div class="message-header">
+                  <p>Content cannot be added to Steemifier</p>
+                </div>
+                <div class="message-body">
+                    <p>You need to own the content in order to be able to add it on Steemifier</p>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script src="add.js"></script>
+</body>
+
+</html>

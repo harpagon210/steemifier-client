@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+@import '~noty/lib/noty';
+@import 'steemifier_noty';
+
+.steemifier {
+    @import '~bulma/bulma';
+    @import '~bulma-extensions/bulma-slider/dist/bulma-slider';
+    @import '~bulma-extensions/bulma-tagsinput/dist/bulma-tagsinput';
+
+    #preview p {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #preview {
+        font-size: 1.5em;
+    }
+
+    #popup * {
+        box-sizing: border-box;
+    }
+
+    #steemifier-comments-tabs .comments-tab {
+        display: none;
+    }
+
+    #steemifier-comments-tabs .comments-tab.active-comments-tab {
+        display: block;
+    }
+
+    #steemifier-steem-comments-box {
+        max-width: -webkit-fill-available;
+    }
+
+    #vote-modal .modal-card {
+        width: 350px;
+    }
+
+    #counters {
+        cursor: pointer;
+    }
+
+    #author-name {
+        color: $primary;
+    }
+
+    #author-name:hover {
+        color: $dark;
+    }
+
+    #follow-btn {
+        height: 26px;
+        width: 130px;
+        margin-top: 7px;
+    }
+
+    #follow-btn.following {
+        background-color: $dark;
+    }
+
+    .modal {
+        z-index: 3000;
+    }
+
+    .modal-card-body {
+        min-height: 100px;
+    }
+
+    #steem-comments-box a {
+        color: $dark;
+    }
+
+    .vote-button:hover {
+        cursor: pointer;
+    }
+
+    .vote-list-button:hover {
+        cursor: pointer;
+    }
+
+    .vote-button svg path {
+        fill: $primary;
+    }
+
+    .vote-button.upvoted svg path {
+        fill: $dark;
+    }
+
+    .vote-button.vote-button-hover svg path {
+        fill: $dark;
+    }
+
+    .avatar-rounded {
+        border-radius: 500rem;
+    }
+
+    .steemifier-tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .media-content {
+        overflow: visible; 
+    }
+
+    .steemifier-tooltip .steemifier-tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: $primary;
+        color: $light;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 3000;
+        bottom: 125%;
+        left: 50%;
+        opacity: 0;
+        transition: opacity 1s;
+        transform: translateX(-50%);
+    }
+
+    .steemifier-tooltip .steemifier-tooltiptext-right {
+        visibility: hidden;
+        width: 200px;
+        background-color: $primary;
+        color: $light;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 3000;
+        top: -5px;
+        left: 105%;    
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .steemifier-tooltip a {
+        color: $light;
+    }
+
+    .steemifier-tooltip a:hover {
+        color: $dark;
+    }
+
+    .steemifier-tooltip .steemifier-tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $primary transparent transparent transparent;
+    }
+
+    .steemifier-tooltip:hover .steemifier-tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .steemifier-tooltip:hover .steemifier-tooltiptext-right {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .element {
+        &.is-loading {
+            position: relative;
+            pointer-events: none;
+            &:after {
+                @include loader;
+                position: absolute;
+                top: calc(50% - 2.5em);
+                left: calc(50% - 2.5em);
+                width: 5em;
+                height: 5em;
+                border-width: 0.25em;
+            }
+        }
+    }
+}
